@@ -1,0 +1,194 @@
+body {
+    background-color: #020204;
+    color: #c5c6c7;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-image: radial-gradient(circle at center, #1c242e 0%, #020204 70%);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-container {
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    padding: 40px;
+    box-sizing: border-box;
+    background: rgba(11, 12, 16, 0.85);
+    border: 1px solid rgba(69, 162, 158, 0.2);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+}
+
+h1 {
+    text-align: center;
+    color: #66fcf1;
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    text-shadow: 0 0 8px rgba(102, 252, 241, 0.4);
+    margin-top: 0;
+}
+
+.common-text {
+    text-align: justify;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.hud-panel {
+    margin-top: auto;
+    width: 100%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    border-top: 1px dashed rgba(69, 162, 158, 0.3);
+    background: #020204;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.hud-metric {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.hud-metric span {
+    color: #45a29e;
+    font-weight: bold;
+}
+
+.hud-metric.danger span {
+    color: #ff4d4d;
+    text-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
+}
+
+.choice-form {
+    margin-top: 35px;
+}
+
+.choice-row input[type="radio"] {
+    display: none;
+}
+
+.choice-row label {
+    display: block;
+    background: rgba(26, 26, 29, 0.6);
+    border: 1px solid #45a29e;
+    color: #c5c6c7;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border-radius: 2px;
+}
+
+.choice-row label:hover {
+    background: rgba(102, 252, 241, 0.05);
+    border-color: #66fcf1;
+    color: #fff;
+    padding-left: 25px; /* Эффект сдвига */
+}
+
+.choice-row input[type="radio"]:checked + label {
+    background: rgba(102, 252, 241, 0.1);
+    border-color: #66fcf1;
+    color: #66fcf1;
+    box-shadow: inset 0 0 10px rgba(102, 252, 241, 0.2);
+    font-weight: bold;
+}
+
+.submit-btn {
+    width: 100%;
+    background: #45a29e;
+    border: none;
+    color: #0b0c10;
+    padding: 14px;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    transition: background 0.2s;
+}
+
+.submit-btn:hover {
+    background: #66fcf1;
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
+}
+
+.form-instruction {
+    display: block;
+    color: #45a29e;
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-name {
+    width: 100%;
+    background: rgba(26, 26, 29, 0.6);
+    border: 1px solid #45a29e;
+    color: #66fcf1;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 1.1rem;
+    text-align: center;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.input-name:focus {
+    outline: none;
+    border-color: #66fcf1;
+    background: rgba(102, 252, 241, 0.05);
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.2);
+}
+
+.input-name::placeholder {
+    color: #4f5d65;
+    font-style: italic;
+}
+
+.error-title {
+    color: #ff4d4d;
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
+    letter-spacing: 5px;
+}
+
+.error-link {
+    display: block;
+    width: max-content;
+    margin: 30px auto 0 auto;
+    padding: 12px 30px;
+    background: transparent;
+    border: 1px solid #45a29e;
+    color: #45a29e;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: all 0.25s ease;
+    border-radius: 2px;
+}
+
+.error-link:hover {
+    background: rgba(102, 252, 241, 0.05);
+    border-color: #66fcf1;
+    color: #66fcf1;
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.3);
+    padding-left: 40px;
+    padding-right: 40px;
+}
