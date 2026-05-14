@@ -4,7 +4,11 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
-
+/**
+ * Фильр настойки кодировки символов (UTF-8)
+ * Перехватывает входящие запросы и исходящие ответы приложения.
+ * Гарантирует корректное отображение кириллицы при получении данных из HTML-форм и при генерации JSP-страниц квеста.
+ */
 @WebFilter("/*")
 public class EncodingFilter implements Filter {
 

@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * Сервлет старта игровой сессии.
+ * Отвечает за регистрацию игрока и инициализацию параметров осколков прамяти и разума.
+ */
 @WebServlet("/start")
 public class StartServlet extends HttpServlet {
 

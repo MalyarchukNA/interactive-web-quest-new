@@ -15,8 +15,9 @@ import java.io.IOException;
 
 /**
  * Основной класс логики игры.
- * Использует HttpSession для хранения состояний игры
- *
+ * Использует HttpSession для хранения состояний.
+ * Обрабатывет шаги игрока, пересчитывает значения параметров осколков памяти и разума.
+ * Проверяет условия осуществления скрытых концовок и осуществляет маршрутизацию между шагами, а так же страницами финаламов игры.
  */
 
 @WebServlet("/game")
@@ -42,7 +43,7 @@ public class GameServlet extends HttpServlet {
             stepId = "start";
         }
 
-        //Выход на финал timelessness
+        //Выход на финал timelessness (если при переходе на финальный шаг имеем меньше 40 очков разума)
         if (stepId.equals("finalStep") && lucidity < 40){
             QuestStep step = service.getStep("timelessness");
             if (nextStepText != null && !nextStepText.isBlank()){
@@ -66,6 +67,7 @@ public class GameServlet extends HttpServlet {
         QuestStep step = service.getStep(stepId);
 
         if (stepId.equals("trueFinal")){
+            //Переходим в истинную концовку только если сохранили 30 разума и собрали минимум 2 осколка
             if (lucidity < 30 || fragments < 2){
                 step = service.getStep("defeat");
             }
@@ -97,6 +99,12 @@ public class GameServlet extends HttpServlet {
 
         req.getRequestDispatcher("/game.jsp").forward(req, resp);
     }
+
+    /**
+     * Преобразует строковое число в целочисленное
+     * @param str - строковое представление числа
+     * @return сконвертированное целое число, либо 0 в случае ошибка парсинга
+     */
 
     private Integer safeParse(String str){
         try {

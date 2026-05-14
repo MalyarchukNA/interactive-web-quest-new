@@ -6,6 +6,10 @@ import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 
+/**
+ * Сервис для инициализации игровых шагов и финалов.
+ * Имеет методы проверки финала и получения игрового шага по id.
+ */
 public class QuestService {
 
     private static final Logger logger = LoggerFactory.getLogger(QuestService.class);

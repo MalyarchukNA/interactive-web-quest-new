@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * Сервлет для перезапуска игровой сессии и сброса состояния.
+ * Очищает значения всех параметров и перенаправляет на стартовую страницу.
+ */
 @WebServlet("/restart")
 public class RestartServlet extends HttpServlet {
 
@@ -19,7 +23,7 @@ public class RestartServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        doPost(req, resp);
     }
 
     @Override
